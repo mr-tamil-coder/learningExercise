@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background changer</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #d61111;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <select id="boxValue">
+        <option value="black" >black</option>
+        <option value="red" selected>red</option>
+        <option value="green">green</option>
+    </select>
+    <script>
+let color=document.querySelector('div');
+let boxValue=document.querySelector('#boxValue');
+let colorChange=(value)=>{
+ color.style.backgroundColor=value;
+}
+boxValue.addEventListener('change',function(){
+    colorChange(this.value);
+
+});
+colorChange(boxValue.value);
+
+    </script>
+</body>
+</html>
