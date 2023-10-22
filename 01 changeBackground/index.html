@@ -8,7 +8,7 @@
         div{
             width: 100px;
             height: 100px;
-            background: #d61111;
+            background: #9ACB4A;
         }
     </style>
 </head>
@@ -20,16 +20,35 @@
         <option value="green">green</option>
     </select>
     <script>
-let color=document.querySelector('div');
-let boxValue=document.querySelector('#boxValue');
-let colorChange=(value)=>{
- color.style.backgroundColor=value;
-}
-boxValue.addEventListener('change',function(){
-    colorChange(this.value);
 
-});
-colorChange(boxValue.value);
+function changeBodyColor() {
+            // Generate a random color using a simple function
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            // Set the body background color to a random color
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+        // Add an event listener to the button
+        const changeColorButton = document.getElementById('boxValue');
+        changeColorButton.addEventListener('change', changeBodyColor);
+// let color=document.querySelector('body');
+// let boxValue=document.querySelector('#boxValue');
+// let colorChange=(value)=>{
+//  color.style.backgroundColor=value;
+// }
+// boxValue.addEventListener('change',function(){
+//     colorChange(this.value);
+
+// });
+// colorChange(boxValue.value);
 
     </script>
 </body>
